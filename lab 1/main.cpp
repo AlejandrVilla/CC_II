@@ -64,7 +64,7 @@ bool esPrimo(long long int num){
 
 long long int factorPrimoMasGrande(long long int num){
     long long int mayor;
-    for (int i=2;i<=sqrt(num);i++){
+    for (int i=2;i<=sqrt(num);i++){     //solo prueba hasta la raiz del numero
         if (num%i==0){
             if(esPrimo(i)){
                 mayor=i;
@@ -125,20 +125,21 @@ int main(){
 
 //ejercicio 5
 /*
-long int multiploMasPeque(int inf, int sup){
+long int multiploMasPeque(int inf, int sup){    //demora pero si funciona
     int cont=0;
-    for (long int i=1;;i++){
-        cout<<i<<endl;
+    for (long int i=1;;i++){        //i aumenta hasta encontrar el numero
+        //cout<<i<<endl;
         for (long int j=inf;j<=sup;j++){
-            if (i%j==0)
-                cont++;
+            if (i%j==0)             //si es divisible
+                cont++;             //aumenta contador
         }
-        if (cont==sup)
+        if (cont==sup)              //contador igual a limite superior
             return i;
         else
             cont=0;
     }
 }*/
+
 /*
 int multiploMasPeque(int inf, int sup){
     for (int i=1;;i++)
@@ -204,9 +205,9 @@ int main(){
     return 0;
 }*/
 
+/*
 //ejercicio 8
 
-/*
 int numero[1000];       //vector que guarda los 1000 digitos
 
 void llenar(string dir){    //lee los digitos de un archivo txt
@@ -227,7 +228,7 @@ long long int productoAdyacentes(int largo){    //realiza el producto de los ady
     for (int i=0;i<=1000-largo;i++){
         prod=1;
         for (int j=0;j<largo;j++){
-                prod*=numero[j+i];      //acumumla el producto
+                prod*=numero[j+i];      //acumula el producto
         }
         if (prod>prodMayor)
             //cout<<prodMayor<<endl;
@@ -244,19 +245,24 @@ int main(){
     return 0;
 }*/
 
+
 //ejercicio 9
 /*
 int triplePitagorico(int x){
-    for (int a=1;a<1000;a++){       //a va de 1 a 999
-        for (int b=1;b<1000;b++){       //b va de 1 a 999
-            for (int c=1;c<1000;c++){       //c va de 1 a 999
-                if (a<b && b<c){
+    for (int a=1;a<1000;a++)      //a va de 1 a 999
+        for (int b=1;b<1000;b++)      //b va de 1 a 999
+            for (int c=1;c<1000;c++)      //c va de 1 a 999
+                if (a<b && b<c)
                     if (a+b+c==1000 && pow(c,2)==pow(a,2)+pow(b,2))
                         return a*b*c;
-                }
-            }
-        }
-    }
+}*/
+/*
+int triplePitagorico(int x){
+    for (int c=1;c<1000;c++)      //c va de 1 a 999
+        for (int b=1;b<c;b++)      //b < c
+            for (int a=1;a<b;a++)      //a < b
+                    if (a+b+c==1000 && pow(c,2)==pow(a,2)+pow(b,2))
+                        return a*b*c;
 }
 
 int main(){
@@ -269,7 +275,7 @@ int main(){
 //ejercicio 10
 
 bool esPrimo(long int num){     //determina si un numero es primo
-    for (long int i=2;i<num;i++)
+    for (long int i=2;i<=sqrt(num);i++)
         if (num%i==0)
             return false;
     return true;
@@ -293,6 +299,7 @@ int main(){
 
     return 0;
 }*/
+
 /*
 //ejercicio 11
 
@@ -365,16 +372,10 @@ int main(){
     return 0;
 }*/
 
-//ejercicio 12
 /*
-int cantDivisores(int num){     //devuelve la cantidad de divisores de cada numero
+//ejercicio 12
 
-    //int contador=0;
-    //for(int i=1;i<=num;i++){
-    //    if (num%i==0)
-    //       contador++;
-    //}
-    //return contador;
+int cantDivisores(int num){     //devuelve la cantidad de divisores de cada numero
 
     int contador=1;         //cuenta las veces que se dividio por un mismo numero
     int acumulador=1;       //acumula la cantidad de divisores
@@ -418,8 +419,8 @@ int main(){
     cout<<primeroConMasDivisores(500);      //76576500
     return 0;
 }*/
-
 /*
+
 //ejercicio 13
 
 string numeros[100]={       //arreglo de 100 cadenas que representan a los numeros
