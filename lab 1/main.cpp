@@ -54,31 +54,29 @@ int main(){
 }*/
 /*
 //ejercicio 3
-bool esPrimo(long long int x){
-    for (long long int i=2 ; i<x ; i++){
-        if (x%i==0){
+bool esPrimo(long long int num){
+    //cout<<num<<endl;
+    for (int i=2;i<num;i++)
+        if (num%i==0)
             return false;
-        }
-    }
     return true;
 }
 
-long long int mayorFacPrimo(long long int num){
-    long long int mayor=0;
-    for (long long int i=2;i<=num;i++){
-        if (esPrimo(i))
-            if (num%i==0)
+long long int factorPrimoMasGrande(long long int num){
+    long long int mayor;
+    for (int i=2;i<=sqrt(num);i++){
+        if (num%i==0){
+            if(esPrimo(i)){
                 mayor=i;
+            }
+        }
     }
     return mayor;
 }
 
 int main(){
-    long long int num;
-    cout<<"ingrese el numero: ";
-    cin>>num;
-
-    cout<<endl<<"el mayor factor primo de "<<num<<" es: "<<mayorFacPrimo(num); //6857
+    long long int num=600851475143;
+    cout<<factorPrimoMasGrande(num);    //6857
 
     return 0;
 }*/
