@@ -52,10 +52,10 @@ int main(){
 
     return 0;
 }*/
-
+/*
 //ejercicio 3
 bool esPrimo(long long int x){
-    for (long long int i=2 ; i<x/2 ; i++){
+    for (long long int i=2 ; i<x ; i++){
         if (x%i==0){
             return false;
         }
@@ -65,7 +65,7 @@ bool esPrimo(long long int x){
 
 long long int mayorFacPrimo(long long int num){
     long long int mayor=0;
-    for (long long int i=2;i<=num/2;i++){
+    for (long long int i=2;i<=num;i++){
         if (esPrimo(i))
             if (num%i==0)
                 mayor=i;
@@ -81,7 +81,7 @@ int main(){
     cout<<endl<<"el mayor factor primo de "<<num<<" es: "<<mayorFacPrimo(num); //6857
 
     return 0;
-}
+}*/
 
 /*
 //ejercicio 4
