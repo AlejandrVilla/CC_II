@@ -58,7 +58,7 @@ void mostrar(int*A,int longitud){
 
 int main()
 {
-    int n=1000000;
+    int n=10;
     int *arreglo=new int[n];
     int *arregloOrdenado{nullptr};
     iniciarArreglo(arreglo,n);

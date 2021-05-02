@@ -57,7 +57,7 @@ bool comprobar(int* A1,int* A2,long int n){     //comprueba si las matrices son 
 
 int main()
 {
-    int n=1000000;
+    int n=10000;
     int*numeros=new int[n];
     iniciarArreglo(numeros,n);
     int*numerosInvertidos1{nullptr};
