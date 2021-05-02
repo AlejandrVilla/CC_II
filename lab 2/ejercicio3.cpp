@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int *countingSort(int *arreglo,int longitud){
+int *countingSort(int *arreglo,int longitud){       //devuelve un puntero hacia el arreglo ordenado
     int rango=0;
     for (int i=0;i<longitud;i++)        //encuentra el numero mayor en el arreglo
         if (arreglo[i]>rango)

@@ -69,15 +69,14 @@ int main()
     //lee un archivo txt y saca las primeras n palabras
     llenar(arreglo,n,"D:\\archivos personales\\documentos\\C++\\CC II\\semana 3\\lab 2\\ejercicia 6\\texto.txt");
 /*
-    for (int i=0;i<n;i++){
+    for (int i=0;i<n;i++){      //ingresar cadenas por teclado
         cout<<"palabra: ";getline(cin,arreglo[i]);
     }*/
 
     mostrar(arreglo,n);
-    //quickSort(arreglo,0,n);   //
-    bubbleSort(arreglo,n);
+    //quickSort(arreglo,0,n);           //solo funciona cuando no se repiten elementos
+    bubbleSort(arreglo,n);              //funciona cuando se repiten elementos
     mostrar(arreglo,n);
-    //cout<<arreglo[0];
 
     delete [] arreglo;
 

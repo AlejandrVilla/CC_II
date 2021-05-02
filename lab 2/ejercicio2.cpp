@@ -19,18 +19,6 @@ void mostrar(int*A,int n){
         cout<<A[i]<<" ";
     cout<<endl;
 }
-/*
-void invertirIterativa(int* A,int n){   //modifica el mismo arreglo
-    int temp;
-    for (int i=0;i<n/2;i++){
-        temp=A[i];
-        A[i]=A[n-1-i];
-        A[n-1-i]=temp;
-    }
-}*/
-
-
-
 
 int* invertirIterativa(int* A,long int n){   //crea otro arreglo y devuelve su direccion de memoria
     int* invertido=new int[n];
@@ -40,21 +28,8 @@ int* invertirIterativa(int* A,long int n){   //crea otro arreglo y devuelve su d
     }
     return invertido;
 }
-/*
-void invertirRecursiva(int* A,long int n1,long int n2){     //merisabel
-    if (n1>n2-1)
-        return;
-    else{
-        int temp=A[n1];
-        A[n1]=A[n2-1];
-        A[n2-1]=temp;
-        invertirRecursiva(A,n1+1,n2-1);
-    }
 
-}*/
-
-
-void invertirRecursiva(int* A,long int n1,long int n2){     //mio
+void invertirRecursiva(int* A,long int n1,long int n2){     
     int temp;
     if (n1==n2/2)
         return;
@@ -84,22 +59,15 @@ int main()
 {
     int n=1000000;
     int*numeros=new int[n];
-
     iniciarArreglo(numeros,n);
-/*
-    mostrar(numeros,n);
-    invertirIterativa(numeros,n);
-    //invertirRecursiva(numeros,n,n);
-    mostrar(numeros,n);
-
-    delete [] numeros;*/
-
     int*numerosInvertidos1{nullptr};
+
     //mostrar(numeros,n);
     numerosInvertidos1=invertirIterativa(numeros,n);
     invertirRecursiva(numeros,n,n);
     //mostrar(numerosInvertidos1,n);
     //mostrar(numeros,n);
+
     if (comprobar(numeros,numerosInvertidos1,n))
         cout<<"las dos matrices son iguales"<<endl;
     else
