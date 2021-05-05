@@ -110,7 +110,7 @@ void mostrar(unsigned long int*A,int longitud){
     cout<<'\n';
 }
 
-void escribir(string dir,unsigned long int*A,int n){
+void escribir(string dir,unsigned long int*A,int n){    //guarda en un archivo con los numeros ordenados
     ofstream f;
     f.open(dir);
         for (int i=1;i<=n;i++){
@@ -126,13 +126,10 @@ int main()
     int n=1000000;
     unsigned long int *arreglo=new unsigned long int[n];
     unsigned long int *arregloOrdenado{nullptr};
+    
     iniciarArreglo(arreglo,n);
-    //mostrar(arreglo,n);
     quickSort(arreglo,0,n);
     escribir("arregloOrenado.txt",arreglo,n);
-    //arregloOrdenado=countingSort(arreglo,n);
-    //mostrar(arreglo,n);
-    //mostrar(arregloOrdenado,n);
 
     delete [] arreglo;
     delete [] arregloOrdenado;
