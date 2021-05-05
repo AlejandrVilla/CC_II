@@ -106,7 +106,7 @@ int main()
     }*/
 
     //mostrar(arreglo,n);
-    quickSort(arreglo,0,n);           //solo funciona cuando no se repiten elementos
+    quickSort(arreglo,0,n);           
     //bubbleSort(arreglo,n);              //funciona cuando se repiten elementos
     //mostrar(arreglo,n);
     escribir("textoOrdenado.txt",arreglo,n);
