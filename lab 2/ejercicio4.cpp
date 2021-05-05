@@ -13,7 +13,7 @@ int longitudIterativa(string cadena){
 int longitudRecursiva(string cadena){
     if (cadena[0]=='\0')        //si llego al caracter nulo
         return 0;               //añade 0
-    return 1+longitudRecursiva(cadena.substr(1,cadena.size()-1));       //suma 1 por cada caracter de manera recursiva
+    return 1+longitudRecursiva(cadena.substr(1,cadena.size()-1));     //suma 1 por cada caracter de manera recursiva
 }
 
 int main()

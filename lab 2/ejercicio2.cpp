@@ -29,25 +29,20 @@ int* invertirIterativa(int* A,long int n){   //crea otro arreglo y devuelve su d
     return invertido;
 }
 
-void invertirRecursiva(int* A,long int n1,long int n2){     
-    int temp;
-    if (n1==n2/2)
+void invertirRecursiva(int *A,long int a,long int b){
+    if (a==b)
         return;
-    else if (n1==n2){
-        temp=A[0];
-        A[0]=A[n1-1];
-        A[n1-1]=temp;
-        return invertirRecursiva(A,n1-1,n2);
-    }
     else{
-        temp=A[n2-(n1-0)];
-        A[n2-(n1-0)]=A[n1-1];
-        A[n1-1]=temp;
-        return invertirRecursiva(A,n1-1,n2);
+        for (int i=0;i<50;i++){         // intercambia de 50 en 50
+            int temp=A[a+i];
+            A[a+i]=A[b-i-1];
+            A[b-i-1]=temp; 
+        }
+        invertirRecursiva(A,a+50,b-50);
     }
 }
 
-bool comprobar(int* A1,int* A2,long int n){     //comprueba si las matrices son iguales
+bool comprobar(int* A1,int* A2,long int n){     //comprueba si los arreglos son iguales
     for (int i=0;i<=n/2;i++)
         if (A1[i]!=A2[i] && A1[n-1-i]!=A2[n-1-i])
             return false;
@@ -57,25 +52,24 @@ bool comprobar(int* A1,int* A2,long int n){     //comprueba si las matrices son 
 
 int main()
 {
-    int n=10000;
+    int n=1000000;
     int*numeros=new int[n];
     iniciarArreglo(numeros,n);
     int*numerosInvertidos1{nullptr};
 
     //mostrar(numeros,n);
     numerosInvertidos1=invertirIterativa(numeros,n);
-    invertirRecursiva(numeros,n,n);
+    invertirRecursiva(numeros,0,n);
     //mostrar(numerosInvertidos1,n);
     //mostrar(numeros,n);
 
     if (comprobar(numeros,numerosInvertidos1,n))
-        cout<<"las dos matrices son iguales"<<endl;
+        cout<<"los dos arreglos son iguales"<<endl;
     else
-        cout<<"las dos matrices son diferentes"<<endl;
+        cout<<"los dos arreglos son diferentes"<<endl;
 
     delete [] numerosInvertidos1;
     delete [] numeros;
-
 
     return 0;
 }
