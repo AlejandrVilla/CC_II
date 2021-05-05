@@ -83,7 +83,7 @@ void mostrar (string*A,int n){
     cout<<'\n';
 }
 
-void escribir(string dir,string*A,int n){
+void escribir(string dir,string*A,int n){       //crea un archivo txt con el arreglo de cadenas ordenado
     ofstream f;
     f.open(dir);
         for (int i=1;i<=n;i++){
